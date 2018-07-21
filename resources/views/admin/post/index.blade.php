@@ -47,9 +47,12 @@
                 @endforeach
                 </tbody>
             </table>
+            <nav aria-label="Page navigation" class="text-center">
+                <ul class="pagination">
+                    <li>{!! $posts->render() !!}</li>
+                </ul>
+            </nav>
         </div>
     </div>
-
-
 @stop
 

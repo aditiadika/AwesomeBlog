@@ -5,6 +5,7 @@ use App\Tag;
 use App\Post;
 use App\Category;
 use App\Setting;
+use App\Profile;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -12,16 +13,25 @@ class FrontendController extends Controller
     //
     public function index()
     {
-    	return view('index')
-    				->with('title', Setting::first()->site_name)
-    				->with('categories', Category::take(5)->get())
-    				->with('first_post', Post::orderBy('created_at', 'desc')->first())
-    				->with('second_post', Post::orderBy('created_at', 'desc')->skip(1)->take(1)->get()->first())
-    				->with('third_post', Post::orderBy('created_at', 'desc')->skip(2)->take(1)->get()->first())
-                    ->with('carrer', Category::find(7))
-                    ->with('tutorials', Category::find(6))
-                    ->with('settings', Setting::first());
+        $contents = Post::orderBy('created_at')->take(3)->get();
+        $setting = Setting::first();
+        $profile = Profile::first();
+
+        return view('layouts.frontend', compact('contents', 'setting', 'profile'));
     }
+
+    public function masterContent()
+    {
+        $setting = Setting::first();
+        $profile = Profile::first();
+        $contents = Post::orderBy('created_at')->take(5)->paginate(5);
+        $recentPosts = Post::orderBy('created_at')->take(3)->get();
+        $categories = Category::all();
+
+
+        return view('master-content', compact('contents', 'profile', 'setting', 'recentPosts', 'categories'));
+    }
+
     public function singlePost($slug)
     {
         $post = Post::where('slug', $slug)->first();
@@ -36,6 +46,7 @@ class FrontendController extends Controller
                     ->with('prev', Post::find($prev_id))
                     ->with('tags', Tag::all());
     }
+
     public function category($id)
     {
         $category = Category::find($id);
@@ -45,6 +56,7 @@ class FrontendController extends Controller
                     ->with('settings', Setting::first())
                     ->with('categories', Category::take(5)->get());
     }
+
     public function tag($id)
     {
         $tag        = Tag::find($id);
