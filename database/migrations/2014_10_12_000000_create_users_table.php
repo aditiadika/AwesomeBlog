@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->boolean('admin')->default(0);
             $table->string('password');
+            $table->enum('status', ['Waiting for Approval', 'Active', 'Not Active', 'Blacklisted', 'Not Verified', 'Reject']);
             $table->rememberToken();
             $table->timestamps();
         });

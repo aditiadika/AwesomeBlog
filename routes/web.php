@@ -21,14 +21,14 @@ Route::get('/master-content', [
     'as'    => 'master.content'
 ]);
 
-// Route::get('/post/{slug}', [
-//     'uses' => 'FrontendController@singlePost',
-//     'as'    => 'post.single'
-// ]);
-// Route::get('/category/{id}', [
-//     'uses' => 'FrontendController@category',
-//     'as'    => 'category.single'
-// ]);
+Route::get('/master-content/{slug}', [
+    'uses' => 'FrontendController@singlePost',
+    'as'    => 'post.single'
+]);
+Route::get('/category/{id}', [
+    'uses' => 'FrontendController@category',
+    'as'    => 'category.single'
+]);
 // Route::get('/tag/{id}', [
 //     'uses' => 'FrontendController@tag',
 //     'as'    => 'tag.single'

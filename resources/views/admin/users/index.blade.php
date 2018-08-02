@@ -14,6 +14,9 @@
                     Permissions
                 </th>
                 <th>
+                    Active
+                </th>
+                <th>
                     Delete
                 </th>
                 </thead>
@@ -23,7 +26,7 @@
                         @foreach($users as $user)
                             <tr>
                                 <td>
-                                    <img src="{{ asset($user->profile->avatar) }}" alt="" height="60px" width="60px" style="border-radius: 50%">
+                                    {{--  <img src="{{ asset($user->profile->avatar) }}" alt="" height="60px" width="60px" style="border-radius: 50%">  --}}
                                 </td>
                                 <td>
                                     {{ $user->name }}
@@ -36,7 +39,9 @@
                                     @endif
                                 </td>
                                 <td>
-
+                                    <span style="color:blue">{{ $user->status }}</span>
+                                </td>
+                                <td>
                                     @if(Auth::id() !== $user->id)
 
                                         <a href="{{ route('users.delete',['id' => $user->id]) }}" class="btn btn-xs btn-danger">Delete</a>

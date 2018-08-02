@@ -1,5 +1,5 @@
-@extends('layouts.frontend')
-
+@extends('master')
+{{--  
 @section('content')
 	<div class="stunning-header stunning-header-bg-lightviolet">
 	    <div class="stunning-header-content">
@@ -187,4 +187,9 @@
 	        </main>
 	    </div>
 	</div>
-@stop
+@stop  --}}
+
+@section('content')
+testxzcxcxzc
+
+@endsection

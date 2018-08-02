@@ -28,33 +28,35 @@ class FrontendController extends Controller
         $recentPosts = Post::orderBy('created_at')->take(3)->get();
         $categories = Category::all();
 
-
-        return view('master-content', compact('contents', 'profile', 'setting', 'recentPosts', 'categories'));
+        return view('blog.analysis', compact('contents', 'profile', 'setting', 'recentPosts', 'categories'));
     }
 
     public function singlePost($slug)
     {
         $post = Post::where('slug', $slug)->first();
-        $next_id = Post::where('id', '>', $post->id)->min('id');
-        $prev_id = Post::where('id', '<', $post->id)->max('id');
+        $recentPosts = Post::orderBy('created_at')->take(3)->get();
+        $categories = Category::all();
+        $setting = Setting::first();
+        $profile = Profile::first();
 
-        return view('single')->with('post', $post)
-                    ->with('title', $post->title)
-                    ->with('settings', Setting::first())
-                    ->with('categories', Category::take(5)->get())
-                    ->with('next', Post::find($next_id))
-                    ->with('prev', Post::find($prev_id))
-                    ->with('tags', Tag::all());
+        return view('blog.analysis-detail', compact('post', 'recentPosts', 'categories', 'profile', 'setting'));
     }
 
     public function category($id)
     {
         $category = Category::find($id);
+        $recentPosts = Post::orderBy('created_at')->take(3)->get();
+        $categories = Category::all();
+        $setting = Setting::first();
+        $profile = Profile::first();
+        // $blogCategories = Post::whereHas('category')->get();
+        // dd($blogCategories->toArray());
+        // $blogCategories = Post::whereHas('category', function ($query) use ($category) {
+        //     $query->where('slug', strtolower($id));
+        // })->with('category')->get();
+        // dd($blogCategories->toArray());
 
-        return view('category')->with('category', $category)
-                    ->with('title', $category->name)
-                    ->with('settings', Setting::first())
-                    ->with('categories', Category::take(5)->get());
+        return view('category', compact('category', 'recentPosts', 'categories', 'profile', 'setting'));
     }
 
     public function tag($id)

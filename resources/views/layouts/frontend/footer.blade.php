@@ -5,7 +5,7 @@
                 <div class="footer-content">
                     <div class="footer-head">
                         <div class="footer-logo">
-                            <h2><span>e</span>Business</h2>
+                            <h2><span>Saham</span>Profit</h2>
                         </div>
 
                         <p>{{$profile->about}}</p>
@@ -15,10 +15,10 @@
                                     <a href="{{ $profile->facebook }}"><i class="fa fa-facebook"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="{{ $profile->tweeter }}"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="{{ $profile->instagram }}"><i class="fa fa-instagram"></i></a>
                                 </li>
                                 <li>
                                     <a href="{{ $profile->youtube }}"><i class="fa fa-youtube"></i></a>
@@ -49,11 +49,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="copyright text-center">
-                    <p>
-                        &copy; Copyright <strong>eBusiness</strong>. All Rights Reserved
-                    </p>
-                </div>
                 <div class="credits">
                     <!--
                       All the links in the footer should remain intact.

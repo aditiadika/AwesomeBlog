@@ -13,11 +13,10 @@ class SettingsTableSeeder extends Seeder
     {
         //
         \App\Setting::create([
-        	'site_name' => "Aditia Blog",
-        	'address'	=> "Rawa Jaya st, East Jakarta",
-        	'contact_number'	=> '087885297454',
-        	'contact_email'	=> 'aditiaaadicka@gmail.com'
-
+        	'site_name' => "Saham Profit",
+        	'address'	=> "Unknown st, East Jakarta",
+        	'contact_number'	=> '08123128932',
+        	'contact_email'	=> 'sahamprofit@gmail.com'
         ]);
     }
 }

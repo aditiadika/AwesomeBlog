@@ -66,8 +66,8 @@
                 <!-- Brand -->
                 <a class="navbar-brand page-scroll sticky-logo" href="index.html">
                   <h1><span>Saham</span>Profit</h1>
-                  <!-- Uncomment below if you prefer to use an image logo -->
-                  <!-- <img src="img/logo.png" alt="" title=""> -->
+                  {{--  <!-- Uncomment below if you prefer to use an image logo -->
+                  <!-- <img src="img/logo.png" alt="" title=""> -->  --}}
                 </a>
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
@@ -128,7 +128,7 @@
                 </div>
                 <!-- layer 2 -->
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">We're In The Business Of Helping You Start Your Business</h1>
+                  <h1 class="title2">Were In The Business Of Helping You Start Your Business</h1>
                 </div>
                 <!-- layer 3 -->
                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
@@ -153,7 +153,7 @@
                 </div>
                 <!-- layer 2 -->
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">We're In The Business Of Get Quality Business Service</h1>
+                  <h1 class="title2">Were In The Business Of Get Quality Business Service</h1>
                 </div>
                 <!-- layer 3 -->
                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">

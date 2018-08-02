@@ -20,6 +20,8 @@ class CreateProfilesTable extends Migration
             $table->text('about')->nullable();
             $table->string('facebook')->nullable();
             $table->string('youtube')->nullable();
+            $table->string('tweeter')->nullable();
+            $table->string('instagram')->nullable();
             $table->timestamps();
         });
     }
