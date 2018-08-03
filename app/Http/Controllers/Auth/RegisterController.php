@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Profile;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -61,21 +63,38 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+     protected function create(array $data)
+     {
+         $user =  User::create([
+             'name' => $data['name'],
+             'email' => $data['email'],
+             'password' => bcrypt($data['password']),
+             'admin' => 0,
+             'status' => 'Not Active'
+         ]);
+
+         Profile::create([
+             'user_id'   => $user->id,
+             'avatar'    => 'uploads/avatars/1.jpeg'
+         ]);
+
+         return $user;
+     }
+
+    public function register(Request $request)
     {
-        $user =  User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'admin' => 0,
-            'status' => 'Not Active'
-        ]);
+        $this->validator($request->all())->validate();
 
-        Profile::create([
-            'user_id'   => $user->id,
-            'avatar'    => 'uploads/avatars/1.jpeg'
-        ]);
+        event(new Registered($user = $this->create($request->all())));
 
-        return $user;
+        if ($user->status != 'Active') {
+            // Message! inform to user. account has been registered but status != Active
+            return redirect()->route('login');
+        }
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
     }
 }
