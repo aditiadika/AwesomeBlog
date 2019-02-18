@@ -8,12 +8,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>H A K A</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
     @yield('styles')
 </head>
 <body>
@@ -76,7 +76,7 @@
         <div class="container">
             <div class="row">
             @if(Auth::check())
-                <div class="col-lg-4">                   
+                <div class="col-md-3">
                     <ul class="list-group">
                         <li class="list-group-item">
                             <a href="{{ route('home') }}">Home</a>
@@ -102,7 +102,24 @@
                             <a href="{{ route('tags.create') }}">Create New Tag</a>
                         </li>
                         <li class="list-group-item">
+                            <a href="{{ route('get.subscribe') }}">Subscriber</a>
+                        </li>
+                        <li class="list-group-item">
                             <a href="{{ route('posts.trashed') }}">All Trashed Post</a>
+                        </li>
+
+                        <h4 class="text-center">Import Excel Area</h4>
+                        <li class="list-group-item">
+                            <a href="{{ route('index.rangking-volume') }}">Ranking Volume</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ route('index.trend-reversal') }}">Bandarmology</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ route('index.boom') }}">Breakout</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ route('index.foreign-accumulation') }}">Foreign Accumulation</a>
                         </li>
 
                         <h4 class="text-center">Setting Area</h4>
@@ -126,7 +143,7 @@
                     </ul>
                 </div>
             @endif
-                <div class="col-lg-8">
+                <div class="col-md-9">
                     @yield('content')
                 </div>
             </div>
@@ -136,6 +153,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/toastr.min.js') }}"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     <script>
         @if (Session::has('success'))
             toastr.success("{{ Session::get('success') }}")

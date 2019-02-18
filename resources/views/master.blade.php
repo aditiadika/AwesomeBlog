@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Saham Profit</title>
+  <title>H A K A</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -65,9 +65,15 @@
                 </button>
                 <!-- Brand -->
                 <a class="navbar-brand page-scroll sticky-logo" href="{{ route('index') }}">
-                  <h1><span>Saham</span>Profit</h1>
-                  {{--  <!-- Uncomment below if you prefer to use an image logo -->
-                  <!-- <img src="img/logo.png" alt="" title=""> -->  --}}
+                  <h1>
+                    <span style="color: #69d2e7">H
+                    </span>
+                    <span style="color: #69d2e7">A
+                      </span>
+                      <span style="color: #69d2e7">K
+                        </span>
+                    <span style="color: #69d2e7">A</span>
+                  </h1>
                 </a>
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
@@ -76,6 +82,19 @@
                   <li class="active">
                     <a class="page-scroll" href="{{ route('index') }}">Back Home Page</a>
                   </li>
+                  @auth
+                  <li>
+                      <a href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                          Logout
+                      </a>
+
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          {{ csrf_field() }}
+                      </form>
+                  </li>
+                  @endauth
                 </ul>
               </div>
               <!-- navbar-collapse -->
@@ -97,9 +116,9 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="slider-content text-center">
             <div class="header-bottom">
-              <div class="layer2 wow zoomIn" data-wow-duration="1s" data-wow-delay=".4s">
+              {{--  <div class="layer2 wow zoomIn" data-wow-duration="1s" data-wow-delay=".4s">
                 <h1 class="title2">Analysis</h1>
-              </div>
+              </div>  --}}
               <div class="layer3 wow zoomInUp" data-wow-duration="2s" data-wow-delay="1s">
                 <h2 class="title3">Profesional Content For Trader</h2>
               </div>

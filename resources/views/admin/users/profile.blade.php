@@ -41,8 +41,18 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="name">Twiiter Profile</label>
+                    <input type="text" name="tweeter" value="{{ $user->profile->tweeter }}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Instagram Profile</label>
+                    <input type="text" name="instagram" value="{{ $user->profile->instagram }}" class="form-control">
+                </div>
+
+                <div class="form-group">
                     <label for="about">About</label>
-                    <textarea name="about" id="about" cols="6" rows="6" value="{{ $user->profile->about }}" class="form-control"></textarea>
+                    <textarea name="about" id="about" cols="6" rows="6" class="form-control">{{ $user->profile->about }}</textarea>
                 </div>
 
                 <div class="form-group">

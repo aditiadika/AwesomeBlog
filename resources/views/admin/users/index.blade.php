@@ -4,27 +4,27 @@
         <div class="panel-body">
             <table class="table table-hover">
                 <thead>
-                <th>
-                    Image
-                </th>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Permissions
-                </th>
-                <th>
-                    Active
-                </th>
-                <th>
-                    Delete
-                </th>
+                    <th class="text-center">
+                        Image
+                    </th>
+                    <th class="text-center">
+                        Name
+                    </th>
+                    <th class="text-center">
+                        Permissions
+                    </th>
+                    <th class="text-center">
+                        Status
+                    </th>
+                    <th class="text-center">
+                        Action
+                    </th>
                 </thead>
 
                 <tbody>
                     @if($users->count() > 0)
                         @foreach($users as $user)
-                            <tr>
+                            <tr class="text-center">
                                 <td>
                                     {{--  <img src="{{ asset($user->profile->avatar) }}" alt="" height="60px" width="60px" style="border-radius: 50%">  --}}
                                 </td>
@@ -45,6 +45,8 @@
                                     @if(Auth::id() !== $user->id)
 
                                         <a href="{{ route('users.delete',['id' => $user->id]) }}" class="btn btn-xs btn-danger">Delete</a>
+                                        <a href="{{ route('users.activated',['id' => $user->id]) }}" class="btn btn-xs btn-primary">Activated</a>
+                                        <a href="{{ route('users.banned',['id' => $user->id]) }}" class="btn btn-xs btn-warning">Banned</a>
 
                                     @endif
                                 </td>

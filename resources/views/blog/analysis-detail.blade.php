@@ -31,5 +31,5 @@
         <!-- single-blog end -->
       </div>
     </div>
-  </div>
+</div>
 @endsection

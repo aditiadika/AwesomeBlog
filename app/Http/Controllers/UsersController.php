@@ -92,7 +92,26 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+
+        $user->status = 'Active';
+        $user->save();
+
+        session()->flash('success', 'User Activated');
+
+        return redirect()->back();
+    }
+
+    public function banned($id)
+    {
+        $user = User::find($id);
+
+        $user->status = 'Not Active';
+        $user->save();
+
+        session()->flash('success', 'User Banned');
+
+        return redirect()->back();
     }
 
     /**
@@ -138,6 +157,7 @@ class UsersController extends Controller
 
         return redirect()->back();
     }
+
     public function not_admin($id)
     {
         $user = User::find($id);

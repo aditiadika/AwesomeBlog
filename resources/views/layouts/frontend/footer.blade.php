@@ -5,7 +5,16 @@
                 <div class="footer-content">
                     <div class="footer-head">
                         <div class="footer-logo">
-                            <h2><span>Saham</span>Profit</h2>
+                            <h2>
+                                <span style="color: #69d2e7">H
+                                </span>
+                                <span style="color: #69d2e7">A
+                                </span>
+                                <span style="color: #69d2e7">K
+                                </span>
+                                <span style="color: #69d2e7">A
+                                </span>
+                            </h2>
                         </div>
 
                         <p>{{$profile->about}}</p>

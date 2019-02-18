@@ -29,25 +29,65 @@ Route::get('/category/{id}', [
     'uses' => 'FrontendController@category',
     'as'    => 'category.single'
 ]);
-// Route::get('/tag/{id}', [
-//     'uses' => 'FrontendController@tag',
-//     'as'    => 'tag.single'
-// ]);
-// Route::get('/results', function(){
-//     $posts       = \App\Post::where('title', 'like', '%' .  request('query') . '%')->get();
-//     return view('results')->with('posts', $posts)
-//                 ->with('title', 'Search result: ' . request('query'))
-//                 ->with('settings', \App\Setting::first())
-//                 ->with('categories', \App\Category::take(5)->get())
-//                 ->with('query', request('query'));
-//     // $post       = \App\Post::where('title', 'like', '%' .  request('query') . '%')->get();
-//     // $title      = 'Search result: ' . request('query');
-//     // $settings   = \App\Setting::first();
-//     // $categories = \App\Category::take(5)->get();
-//     // $query      = request('query');
-//     // return view('results', compact('post', 'title', 'settings', 'categories', 'query'));
-// });
+//Trading Guides
+Route::get('/trading-guides', [
+    'uses' => 'FrontendController@tradingGuides',
+    'as'    => 'trading.guides'
+]);
+Route::get('/trading-guides/{slug}', [
+    'uses' => 'FrontendController@detailTradingGuides',
+    'as'    => 'detail.trading-guides'
+]);
+//Programs
+Route::get('/programs', [
+    'uses' => 'FrontendController@programs',
+    'as'    => 'programs'
+]);
+Route::get('/programs/{slug}', [
+    'uses' => 'FrontendController@detailPrograms',
+    'as'    => 'detail.programs'
+]);
 
+Route::get('/breakout', [
+    'uses' => 'ImportExcelController@frontendIndexBreakout',
+    'as'    => 'frontend.breakout'
+]);
+Route::post('/breakout-data', [
+    'uses' => 'ImportExcelController@frontendPostBreakout',
+    'as'    => 'frontend.breakout-post'
+]);
+
+Route::get('/trend-reversal', [
+    'uses' => 'ImportExcelController@frontendIndexTrendReversal',
+    'as'    => 'frontend.trend-reversal'
+]);
+Route::post('/trend-reversal-data', [
+    'uses' => 'ImportExcelController@frontendPostTrendReversal',
+    'as'    => 'frontend.trend-reversal-post'
+]);
+
+Route::get('/boom', [
+    'uses' => 'ImportExcelController@frontendIndexBoom',
+    'as'    => 'frontend.boom'
+]);
+Route::post('/boom-data', [
+    'uses' => 'ImportExcelController@frontendPostBoom',
+    'as'    => 'frontend.boom-post'
+]);
+
+Route::get('/foreign', [
+    'uses' => 'ImportExcelController@frontendIndexForeignAccumulation',
+    'as'    => 'frontend.foreign-accumulation'
+]);
+Route::post('/foreign-accumulation-data', [
+    'uses' => 'ImportExcelController@frontendPostForeignAccumulation',
+    'as'    => 'frontend.foreign-accumulation-post'
+]);
+
+Route::post('subscribe', [
+    'uses'  => 'SubscriberController@data',
+    'as'    => 'subscriber'
+]);
 
 // BACKEND
 Auth::routes();
@@ -170,6 +210,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         'uses'  => 'UsersController@create',
         'as'    => 'users.create'
     ]);
+    Route::get('/users/activated/{id}', [
+
+        'uses'  => 'UsersController@edit',
+        'as'    => 'users.activated'
+    ]);
+    Route::get('/users/banned/{id}', [
+
+        'uses'  => 'UsersController@banned',
+        'as'    => 'users.banned'
+    ]);
     Route::post('/users/store', [
 
         'uses'  => 'UsersController@store',
@@ -211,7 +261,62 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         'as'    => 'setting.update'
     ]);
 
+    Route::get('upload/rangking-volume', [
+        'uses'  => 'ImportExcelController@indexRangkingVolume',
+        'as'    => 'index.rangking-volume'
+    ]);
+    Route::post('upload/rangking-volume-data', [
+        'uses'  => 'ImportExcelController@uploadRangkingVolume',
+        'as'    => 'upload.rangking-volume'
+    ]);
+    Route::post('delete/rangking-volume-data', [
+        'uses'  => 'ImportExcelController@deleteRangkingVolume',
+        'as'    => 'delete.rangking-volume'
+    ]);
 
+    Route::get('upload/trend-reversal', [
+        'uses'  => 'ImportExcelController@indexTrendReversal',
+        'as'    => 'index.trend-reversal'
+    ]);
+    Route::post('upload/trend-reversal', [
+        'uses'  => 'ImportExcelController@uploadTrendReversal',
+        'as'    => 'upload.trend-reversal'
+    ]);
+    Route::post('delete/trend-reversal', [
+        'uses'  => 'ImportExcelController@deleteTrendReversal',
+        'as'    => 'delete.trend-reversal'
+    ]);
+
+    Route::get('upload/foreign-accumulation', [
+        'uses'  => 'ImportExcelController@indexForeignAccumulation',
+        'as'    => 'index.foreign-accumulation'
+    ]);
+    Route::post('upload/foreign-accumulation', [
+        'uses'  => 'ImportExcelController@uploadForeignAccumulation',
+        'as'    => 'upload.foreign-accumulation'
+    ]);
+    Route::post('delete/foreign-accumulation', [
+        'uses'  => 'ImportExcelController@deleteForeignAccumulation',
+        'as'    => 'delete.foreign-accumulation'
+    ]);
+
+    Route::get('upload/boom', [
+        'uses'  => 'ImportExcelController@indexBoom',
+        'as'    => 'index.boom'
+    ]);
+    Route::post('upload/boom', [
+        'uses'  => 'ImportExcelController@uploadBoom',
+        'as'    => 'upload.boom'
+    ]);
+    Route::post('delete/boom', [
+        'uses'  => 'ImportExcelController@deleteBoom',
+        'as'    => 'delete.boom'
+    ]);
+
+    Route::get('get/subscriber', [
+        'uses'  => 'SubscriberController@subscribeBackend',
+        'as'    => 'get.subscribe'
+    ]);
 });
 
 

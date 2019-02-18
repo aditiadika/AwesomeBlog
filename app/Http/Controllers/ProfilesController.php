@@ -72,8 +72,6 @@ class ProfilesController extends Controller
         $this->validate($request,[
             'name'  => 'required',
             'email'  => 'required|email',
-            'facebook'  => 'required|url',
-            'youtube'  => 'required|url'
         ]);
 
         $user = Auth::user();
@@ -115,7 +113,7 @@ class ProfilesController extends Controller
 
         Session()->flash('success', 'Success Update Profile');
 
-        return redirect()->route('users');
+        return redirect()->back();
 
 
 
