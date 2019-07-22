@@ -133,7 +133,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="slider-content">
+              <div class="slider-content text-left">
                 <!-- layer 2 -->
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
                   <h1 class="title2" style="color: white">Want to learn how to become a consistently profitable trader? Then youre in the right place.</h1>
@@ -154,15 +154,14 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="slider-content text-center">
+              <div class="slider-content text-left">
                 <!-- layer 1 -->
                 {{--  <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
                   <h2 class="title1">The Best Business Information </h2>
                 </div>  --}}
                 <!-- layer 2 -->
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">HAKA moment is when traders start believing in their strategy and in turn themselves.
-                    <br>You will NOT succeed in this game without confidence.</h1>
+                  <h1 class="title2">HAKA moment is when traders start believing in their strategy and in turn themselves. You will NOT succeed in this game without confidence.</h1>
                 </div>
                 <!-- layer 3 -->
                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
@@ -184,39 +183,34 @@
   <div id="services" class="services-area area-padding">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-12">
           <div class="section-headline services-head text-center">
-            <h2>Here's What to Do Next:</h2>
+            <h2>Here's What to Do Next</h2>
           </div>
           <br>
         </div>
       </div>
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="well-middle text-center">
+      <div class="col-md-12 ">
+        <div >
           <div class="single-well">
-            {{--<a href="#">--}}
-              {{--<h4 class="sec-head">project Maintenance</h4>--}}
-            {{--</a>--}}
-            <h4>
-              Subscribe below and become a better trader today.
-            </h4>
-            <h4>
-              You'll get:
+            <h4 class="text-center">
+              Subscribe below and become a better trader today, You'll get &nbsp;:
             </h4>
             <ul>
               <li>
-                 <h4><i class="fa fa-check"></i>Practical trading strategies and techniques you can use in your trading today.</h4>
+                 <p style="font-size:18px;"><i class="fa fa-check"></i>Practical trading strategies and techniques you can use in your trading today.</p style="font-size:18px;">
               </li>
               <li>
-                 <h4><i class="fa fa-check"></i>A weekly analysis of Indonesia Stock Market so you're prepared for the week ahead.</h4>
+                 <p style="font-size:18px;"><i class="fa fa-check"></i>A weekly analysis of Indonesia Stock Market so you're prepared for the week ahead.</p style="font-size:18px;">
               </li>
               <li>
-                 <h4><i class="fa fa-check"></i>Access to a H A K A private trading community of more than 1000 traders so you can interact and learn together.</h4>
+                 <p style="font-size:18px;"><i class="fa fa-check"></i>Access to a H A K A private trading community of more than 1000 traders so you can interact and learn together.</p style="font-size:18px;">
               </li>
             </ul>
             <br>
-            <h4>Thanks for reading and We'll see you on the battlefield!</h4> <br>
-            <h4>HAKA</h4>
+            <p style="font-size:18px;">Thanks for reading and We'll see you on the battlefield!</p> 
+            <br>
+            <p style="font-size:18px;">HAKA</p>
           </div>
         </div>
       </div>
@@ -266,7 +260,7 @@
             <div class="section-headline text-center">
               <h2>Trading Guides</h2>
             </div>
-          </div>
+          </div>a
         </div>
         <div class="row">
           <!-- Start Left Blog -->
@@ -380,7 +374,7 @@
             <div class="single-team-member">
               <div class="team-img">
                 <a href="{{ route('frontend.breakout')  }}">
-                    <img src="{{ asset('app/img/ranking_vol.jpeg')  }}" alt="" style="height: 370px">
+                    <img src="{{ asset('app/img/ranking_vol.jpeg')  }}" alt="" class="img-responsive" style="height: 370px;">
                 </a>
               </div>
             </div>
@@ -390,7 +384,7 @@
             <div class="single-team-member">
               <div class="team-img">
                 <a href="{{ route('frontend.trend-reversal')  }}">
-                    <img src="{{ asset('app/img/bandarmology.jpeg')  }}" alt="">
+                    <img src="{{ asset('app/img/bandarmology.jpeg')  }}" alt="" class="img-responsive">
                 </a>
               </div>
             </div>
@@ -400,7 +394,7 @@
             <div class="single-team-member">
               <div class="team-img">
                 <a href="{{ route('frontend.boom')  }}">
-                    <img src="{{ asset('app/img/breakout.jpeg')  }}" alt="">
+                    <img src="{{ asset('app/img/breakout.jpeg')  }}" alt="" class="img-responsive">
                 </a>
               </div>
             </div>
@@ -410,7 +404,7 @@
             <div class="single-team-member">
               <div class="team-img">
                 <a href="{{ route('frontend.foreign-accumulation')  }}">
-                    <img src="{{ asset('app/img/foreign_accum.jpeg') }}" alt="">
+                    <img src="{{ asset('app/img/foreign_accum.jpeg') }}" alt="" class="img-responsive">
                 </a>
 
               </div>
@@ -478,7 +472,7 @@
   <!-- End Blog -->
 
   <!-- Start About area -->
-  <div id="about" class="about-area area-padding">
+  <div id="about" class="about-area area-padding" style="background-color: white">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -489,17 +483,39 @@
       </div>
       <div class="row">
         <!-- single-well start-->
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-12">
+          <a href="#">
+            <img src="{{ asset('app/img/haka.jpeg') }}" alt="" class="img-responsive center-block" style="height: 250px;width:200px">
+          </a>
+          <br>
+          <p style="font-size: 15px">
+            HAKA was created with the vision of becoming the most trusted stock trading community in Indonesia.
+            HAKA is one of the most famous and fastest-growing community of traders in Indonesia.
+            HAKA shortly became well-known for sharing unique-written content which many traders found interesting and helpful.
+          </p>
+          <ul>
+            <li>
+              <p style="font-size: 15px"><i class="fa fa-check"></i> Practical trading strategies and techniques you can use in your trading today.</p> 
+            </li>
+            <li>
+              <p style="font-size: 15px"><i class="fa fa-check"></i> A weekly analysis of Indonesia Stock Market so you're prepared for the week ahead.</p>
+            </li>
+            <li>
+              <p style="font-size: 15px"><i class="fa fa-check"></i> Access to a H A K A private trading community of more than 1000 traders so you can interact and learn together.</p>
+            </li>
+          </ul>
+        </div>
+        {{--  <div class="col-md-12">
           <div class="well-left">
             <div class="single-well">
               <a href="#">
-                <img src="{{ asset('app/img/haka.jpeg') }}" alt="" style="margin-left:150px;height:300px;">
+                <img src="{{ asset('app/img/haka.jpeg') }}" alt="" class="img-responsive text-center">
 			        </a>
             </div>
           </div>
-        </div>
+        </div>  --}}
         <!-- single-well end-->
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        {{--  <div class="col-md-12">
           <div class="well-middle">
             <div class="single-well">
               <p>
@@ -520,7 +536,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div>  --}}
         <!-- End col-->
       </div>
     </div>

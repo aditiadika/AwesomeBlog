@@ -1,6 +1,7 @@
 @extends('master-upload')
 
 @section('master-content')
+    <h4 class="text-center">Trend Reversal</h4>
     <table class="table table-bordered table-hover table-striped w100" cellspacing="0" id="datatable"></table>
 @endsection
 

@@ -18,7 +18,7 @@ class FrontendController extends Controller
         })->with('tags')->orderBy('created_at')->take(3)->get();
         $contents = Post::whereHas('tags', function ($query) {
             $query->where('tag_id', 2);
-        })->with('tags')->orderBy('created_at')->take(3)->get();
+        })->with('tags')->take(3)->latest()->get();
         $programs = Post::whereHas('tags', function ($query) {
             $query->where('tag_id', 3);
         })->with('tags')->orderBy('created_at')->take(3)->get();
@@ -35,7 +35,7 @@ class FrontendController extends Controller
         $contents = Post::orderBy('created_at')->take(5)->paginate(5);
         $contentNotActives = Post::whereHas('tags', function ($query) {
             $query->where('tag_id', 2);
-        })->with('tags')->orderBy('created_at')->take(5)->paginate(5);
+        })->with('tags')->take(5)->latest()->paginate(5);
         $recentPosts = Post::orderBy('created_at')->take(3)->get();
         $categories = Category::all();
 

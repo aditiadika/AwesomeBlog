@@ -177,6 +177,9 @@ class ImportExcelController extends Controller
         $rankingVolume = RangkingVolume::select('rangking_volumes.*');
 
         return Datatables::of($rankingVolume)
+            ->editColumn('datetime', function($row){
+                return \Carbon\Carbon::parse($row->datetime)->format('d M Y');
+            })
             ->make(true);
     }
 
@@ -190,7 +193,10 @@ class ImportExcelController extends Controller
         $trendReversal = TrendReversal::select('trend_reversals.*');
 
         return Datatables::of($trendReversal)
-            ->make(true);
+        ->editColumn('datetime', function($row){
+            return \Carbon\Carbon::parse($row->datetime)->format('d M Y');
+        })
+        ->make(true);
     }
 
     public function frontendIndexBoom()
