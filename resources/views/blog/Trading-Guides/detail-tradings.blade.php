@@ -22,7 +22,7 @@
               </span>
             </div>
             <div class="entry-content">
-              <p>{{ $post->content }}</p>
+              <p>{!! $post->content !!}</p>
             </div>
           </div>
         </article>
