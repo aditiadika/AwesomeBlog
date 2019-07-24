@@ -109,28 +109,8 @@
 </header>
 <!-- header end -->
 
-<!-- Start Bottom Header -->
-<div class="header-bg page-area">
-    <div class="home-overly"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="slider-content text-center">
-                    <div class="header-bottom">
-                        {{--  <div class="layer2 wow zoomIn" data-wow-duration="1s" data-wow-delay=".4s">
-                          <h1 class="title2">Analysis</h1>
-                        </div>  --}}
-                        <div class="layer3 wow zoomInUp" data-wow-duration="2s" data-wow-delay="1s">
-                            <h2 class="title3">Profesional Content For Trader</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END Header -->
-
+<br>
+<br>
 
 <div class="blog-page area-padding">
     <div class="container">
@@ -152,7 +132,7 @@
                     <div class="footer-content">
                         <div class="footer-head">
                             <div class="footer-logo">
-                                <h2>
+                                <h3>
                                 <span style="color: #69d2e7">H
                                 </span>
                                     <span style="color: #69d2e7">A
@@ -161,26 +141,11 @@
                                 </span>
                                     <span style="color: #69d2e7">A
                                 </span>
-                                </h2>
+                                </h3>
                             </div>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores, assumenda atque aut delectus dicta harum id maiores minima minus nam officia possimus provident quas quia quisquam quos repellendus sed?</p>
-                            <div class="footer-icons">
-                                <ul>
-                                    <li>
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-youtube"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <p>
+                                HAKA was created with the vision of becoming the most trusted stock trading community in Indonesia. HAKA is one of the most famous and fastest-growing community of traders in Indonesia. HAKA shortly became well-known for sharing unique-written content which many traders found interesting and helpful.                            </p>
                         </div>
                     </div>
                 </div>
@@ -190,14 +155,36 @@
                         <div class="footer-head">
                             <h4>information</h4>
                             <div class="footer-contacts">
-                                <p><span>Tel:</span> aaaa</p>
-                                <p><span>Email:</span> aaaa</p>
-                                <p><span>Address:</span> aaaaa</p>
+                                <p><span>Tel:</span> 08123128932</p>
+                                <p><span>Email:</span> sahamprofit@gmail.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- end single footer -->
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="footer-content">
+                        <div class="footer-head">
+                            <h4>Contact Us</h4>
+                            <div class="footer-icons">
+                                <ul>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
