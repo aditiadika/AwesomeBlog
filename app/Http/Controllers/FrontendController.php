@@ -22,10 +22,13 @@ class FrontendController extends Controller
         $programs = Post::whereHas('tags', function ($query) {
             $query->where('tag_id', 3);
         })->with('tags')->orderBy('created_at')->take(3)->get();
+        $articles = Post::whereHas('tags', function ($query) {
+            $query->where('tag_id', 4);
+        })->with('tags')->orderBy('created_at')->take(3)->get();
         $setting = Setting::first();
         $profile = Profile::first();
 
-        return view('layouts.frontend', compact('contents', 'setting', 'profile', 'tradingGuides', 'programs'));
+        return view('layouts.frontend', compact('contents', 'setting', 'profile', 'tradingGuides', 'programs', 'articles'));
     }
 
     public function masterContent()
@@ -126,5 +129,30 @@ class FrontendController extends Controller
         $profile = Profile::first();
 
         return view('blog.Programs.detail-programs', compact('post', 'recentPosts', 'categories', 'profile', 'setting'));
+    }
+
+    public function getArticle()
+    {
+        $setting = Setting::first();
+        $profile = Profile::first();
+        $contents = Post::orderBy('created_at')->take(5)->paginate(5);
+        $articles = Post::whereHas('tags', function ($query) {
+            $query->where('tag_id', 4);
+        })->with('tags')->orderBy('created_at')->take(5)->paginate(5);
+        $recentPosts = Post::orderBy('created_at')->take(3)->get();
+        $categories = Category::all();
+
+        return view('blog.article.index', compact('articles','contents', 'profile', 'setting', 'recentPosts', 'categories'));
+    }
+
+    public function detailArticle($slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+        $recentPosts = Post::orderBy('created_at')->take(3)->get();
+        $categories = Category::all();
+        $setting = Setting::first();
+        $profile = Profile::first();
+
+        return view('blog.article.detail-article', compact('post', 'recentPosts', 'categories', 'profile', 'setting'));
     }
 }

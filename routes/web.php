@@ -89,6 +89,16 @@ Route::post('subscribe', [
     'as'    => 'subscriber'
 ]);
 
+//Articles
+Route::get('/article', [
+    'uses' => 'FrontendController@getArticle',
+    'as'    => 'article'
+]);
+Route::get('/article/{slug}', [
+    'uses' => 'FrontendController@detailArticle',
+    'as'    => 'detail.article'
+]);
+
 // BACKEND
 Auth::routes();
 

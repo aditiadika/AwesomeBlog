@@ -218,7 +218,7 @@
                                         Saham</a>
                                 </li>
                                 <li>
-                                    <a class="page-scroll" href="#" style="color: #69d2e7;font-size:15px;">Article</a>
+                                    <a class="page-scroll" href="#articles" style="color: #69d2e7;font-size:15px;">Articles</a>
                                 </li>
                                 <li>
                                     <a class="page-scroll" href="#" style="color: #69d2e7;font-size:15px;">Youtube</a>
@@ -546,6 +546,60 @@
     </div>
 </div>
 <!-- End Team Area -->
+
+{{--Articles--}}
+<div id="articles" class="blog-area">
+    <div class="blog-inner area-padding">
+        <div class="blog-overly"></div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="section-headline text-center">
+                        <h2>Articles</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Start Left Blog -->
+                @foreach($articles as $article)
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="single-blog">
+                            <div class="single-blog-img">
+                                <a href="blog.html">
+                                    <img src="{{ $article->featured }}" alt="" style="height: 200px;width:400px;">
+                                </a>
+                            </div>
+                            <div class="blog-meta">
+                  <span class="comments-type">
+                      @foreach($article->tags as $t)
+                          <a href="#">{{$t->tag}}</a>
+                      @endforeach
+                  </span>
+                                <span class="date-type pull-right">
+                      <i class="fa fa-calendar"></i>{{$article->created_at->toFormattedDateString()}}
+                  </span>
+                            </div>
+                            <div class="blog-text">
+                                <h4>
+                                    <a href="blog.html">{{$article->title}}</a>
+                                </h4>
+                                <p>
+                                    {!! str_limit(strip_tags($article->content), 150) !!}
+                                </p>
+                            </div>
+                            <span>
+                    <a href="{{route('article')}}" class="ready-btn">Read more</a>
+                </span>
+                        </div>
+                        <!-- Start single blog -->
+                    </div>
+            @endforeach
+            <!-- End Left Blog-->
+            </div>
+        </div>
+    </div>
+</div>
+{{--END Articles--}}
 
 <!-- Start Wellcome Area -->
 <div class="wellcome-area">
