@@ -28,6 +28,8 @@ class FrontendController extends Controller
         $setting = Setting::first();
         $profile = Profile::first();
 
+//        dd($profile);
+
         return view('layouts.frontend', compact('contents', 'setting', 'profile', 'tradingGuides', 'programs', 'articles'));
     }
 

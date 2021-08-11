@@ -1,630 +1,326 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="zxx">
 <head>
-    <meta charset="utf-8">
-    <title>H A K A</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Business HTML-5 Template </title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
-    <!-- Favicons -->
-{{--<link href="{{ asset('lib/img/favicon.png') }}" rel="icon">--}}
-{{--<link href="{{ asset('lib/img/apple-touch-icon.png') }}" rel="apple-touch-icon">--}}
+	<!-- CSS here -->
+	<link rel="stylesheet" href="{{  asset('assets/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{  asset('assets/css/owl.carousel.min.css') }}">
+	<link rel="stylesheet" href="{{  asset('assets/css/slicknav.css') }}">
+	<link rel="stylesheet" href="{{  asset('assets/css/flaticon.css') }}">
+	<link rel="stylesheet" href="{{  asset('assets/css/animate.min.css') }}">
+	<link rel="stylesheet" href="{{  asset('assets/css/magnific-popup.css') }}">
+	<link rel="stylesheet" href="{{  asset('assets/css/fontawesome-all.min.css') }}">
+	<link rel="stylesheet" href="{{  asset('assets/css/themify-icons.css') }}">
+	<link rel="stylesheet" href="{{  asset('assets/css/slick.css') }}">
+	<link rel="stylesheet" href="{{  asset('assets/css/nice-select.css') }}">
+	<link rel="stylesheet" href="{{  asset('assets/css/style.css') }}">
 
-<!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900"
-          rel="stylesheet">
-
-    <!-- Bootstrap CSS File -->
-    <link href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Libraries CSS Files -->
-    <link href="{{ asset('css/nivo-slider/css/nivo-slider.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/owlcarousel/owl.carousel.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/owlcarousel/owl.transitions.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/animate/animate.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/venobox/venobox.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
-
-    <!-- Nivo Slider Theme -->
-    <link href="{{ asset('css/nivo-slider-theme.css') }}" rel="stylesheet">
-
-    <!-- Main Stylesheet File -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
-    <!-- Responsive Stylesheet File -->
-    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
-
-    <style type="text/css">
-        body {
-            font-family: "Open Sans", sans-serif;
-        }
-
-        h2 {
-            color: #333;
-            text-align: center;
-            text-transform: uppercase;
-            font-family: "Roboto", sans-serif;
-            font-weight: bold;
+    <style>
+        #container_youtube {
             position: relative;
-            margin: 30px 0 60px;
-        }
-
-        h2::after {
-            content: "";
-            width: 100px;
-            position: absolute;
-            margin: 0 auto;
-            height: 3px;
-            background: #8fbc54;
-            left: 0;
-            right: 0;
-            bottom: -10px;
-        }
-
-        .col-center {
-            margin: 0 auto;
-            float: none !important;
-        }
-
-        .carousel {
-            margin: 50px auto;
-            padding: 0 70px;
-        }
-
-        .carousel .item {
-            color: #999;
-            font-size: 14px;
-            text-align: center;
+            width: 100%;
             overflow: hidden;
-            min-height: 290px;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
         }
 
-        .carousel .item .img-box {
-            width: 135px;
-            height: 135px;
-            margin: 0 auto;
-            padding: 5px;
-            border: 1px solid #ddd;
-            border-radius: 50%;
-        }
-
-        .carousel .img-box img {
+        .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
             width: 100%;
             height: 100%;
-            display: block;
-            border-radius: 50%;
-        }
-
-        .carousel .testimonial {
-            padding: 30px 0 10px;
-        }
-
-        .carousel .overview {
-            font-style: italic;
-        }
-
-        .carousel .overview b {
-            text-transform: uppercase;
-            color: #7AA641;
-        }
-
-        .carousel .carousel-control {
-            width: 40px;
-            height: 40px;
-            margin-top: -20px;
-            top: 50%;
-            background: none;
-        }
-
-        .carousel-control i {
-            font-size: 68px;
-            line-height: 42px;
-            position: absolute;
-            display: inline-block;
-            color: rgba(0, 0, 0, 0.8);
-            text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
-        }
-
-        .carousel .carousel-indicators {
-            bottom: -40px;
-        }
-
-        .carousel-indicators li, .carousel-indicators li.active {
-            width: 10px;
-            height: 10px;
-            margin: 1px 3px;
-            border-radius: 50%;
-        }
-
-        .carousel-indicators li {
-            background: #999;
-            border-color: transparent;
-            box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
-        }
-
-        .carousel-indicators li.active {
-            background: #555;
-            box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+            border: none;
         }
     </style>
-
-    <!-- =======================================================
-      Theme Name: eBusiness
-      Theme URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
-      Author: BootstrapMade.com
-      License: https://bootstrapmade.com/license/
-    ======================================================= -->
 </head>
 
-<body data-spy="scroll" data-target="#navbar-example">
-
-<div id="preloader"></div>
-
+<body class="body-bg">
+<!--? Preloader Start -->
+<div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img src="assets/img/logo/loder.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
 <header>
-    <!-- header-area start -->
-    <div id="sticker" class="header-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-
-                    <!-- Navigation -->
-                    <nav class="navbar navbar-default">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                    data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <!-- Brand -->
-                            <a class="navbar-brand page-scroll sticky-logo" href="index.html">
-                                <h1>
-                                    <span style="color: #69d2e7">H</span>
-                                    <span style="color: #69d2e7">A</span>
-                                    <span style="color: #69d2e7">K</span>
-                                    <span style="color: #69d2e7">A</span>
-                                </h1>
-                                {{--  <!-- Uncomment below if you prefer to use an image logo -->
-                                <!-- <img src="img/logo.png" alt="" title=""> -->  --}}
-                            </a>
+    <!-- Header Start -->
+    <div class="header-area">
+        <div class="main-header ">
+            <div class="header-top d-none d-lg-block">
+                <div class="container">
+                    <div class="col-xl-12">
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="header-info-left">
+                            </div>
+                            <div class="header-info-right">
+                                <ul class="header-social">    
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li> <a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1"
-                             id="navbar-example">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="active">
-                                    <a class="page-scroll" href="#home" style="color: #69d2e7;font-size:15px;">Home</a>
-                                </li>
-                                <li>
-                                    <a class="page-scroll" href="#about" style="color: #69d2e7;font-size:15px;">About
-                                        Us</a>
-                                </li>
-                                <li>
-                                    <a class="page-scroll" href="#program" style="color: #69d2e7;font-size:15px;">Programs</a>
-                                </li>
-                                <li>
-                                    <a class="page-scroll" href="#recomend" style="color: #69d2e7;font-size:15px;">Recommendation</a>
-                                </li>
-                                <li>
-                                    <a class="page-scroll" href="#trading" style="color: #69d2e7;font-size:15px;">Trading
-                                        Guides</a>
-                                </li>
-                                <li>
-                                    <a class="page-scroll" href="#screeners" style="color: #69d2e7;font-size:15px;">Screener
-                                        Saham</a>
-                                </li>
-                                <li>
-                                    <a class="page-scroll" href="#articles" style="color: #69d2e7;font-size:15px;">Articles</a>
-                                </li>
-                                <li>
-                                    <a class="page-scroll" href="#" style="color: #69d2e7;font-size:15px;">Youtube</a>
-                                </li>
-                            </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom  header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <span style="font-size: 25px;color:#42879F" class="font-weight-bold">H A K A</span>
+                                {{-- <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a> --}}
+                            </div>
                         </div>
-                        <!-- navbar-collapse -->
-                    </nav>
-                    <!-- END: Navigation -->
+                        <div class="col-xl-10 col-lg-10">
+                            <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu d-none d-lg-block">
+                                    <nav> 
+                                        <ul id="navigation">                                                                                          
+                                            <li><a href="#home">Home</a></li>
+                                            <li><a href="#about">About</a></li>
+                                            <li><a href="#services">Services</a></li>
+                                            <li><a href="#recommendations">Recommendations</a></li>
+                                            <li><a href="#screeners">Screenners</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div> 
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- header-area end -->
+    <!-- Header End -->
 </header>
-<!-- header end -->
-
-<!-- Start Slider Area -->
-<div id="home" class="slider-area">
-    <div class="bend niceties preview-2">
-        <div id="ensign-nivoslider" class="slides">
-            <img src="{{ asset('lib/img/slider/slider1.jpg') }}" alt="" title="#slider-direction-1"/>
-            <img src="{{ asset('lib/img/slider/slider2.jpg') }}" alt="" title="#slider-direction-2"/>
-        </div>
-
-        <!-- direction 1 -->
-        <div id="slider-direction-1" class="slider-direction slider-one">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="slider-content text-left">
-                            <!-- layer 2 -->
-                            <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                <h1 class="title2" style="color: white">Want to learn how to become a consistently
-                                    profitable trader? Then youre in the right place.</h1>
-                            </div>
-                            <!-- layer 3 -->
-                            <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                                <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>
-                                <a class="ready-btn page-scroll" href="#about">Learn More</a>
+<main>
+    <!-- slider Area Start-->
+    <div id="home" class="slider-area ">
+        <div class="slider-active">
+            <!-- Single Slider -->
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-7 col-md-8">
+                            <div class="hero__caption">
+                                <span data-animation="fadeInLeft" data-delay=".1s">Committed to success</span>
+                                <h1 data-animation="fadeInLeft" data-delay=".5s" >We help to grow your business</h1>
+                                <p data-animation="fadeInLeft" data-delay=".9s">Mollit anim laborum.Dvcuis aute serunt  iruxvfg dhjkolohr indd re voluptate<br> velit esscillumlore eu quife nrulla parihatur.</p>
+                                <!-- Hero-btn -->
+                                <div class="hero__btn" data-animation="fadeInLeft" data-delay="1.1s">
+                                    <a href="industries.html" class="btn hero-btn">Our Services</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>          
             </div>
-        </div>
-
-        <!-- direction 2 -->
-        <div id="slider-direction-2" class="slider-direction slider-two">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="slider-content text-left">
-                        <!-- layer 2 -->
-                            <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                <h1 class="title2">HAKA moment is when traders start believing in their strategy and in
-                                    turn themselves.
-                                </h1>
-                            </div>
-                            <!-- layer 3 -->
-                            <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                                <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>
-                                <a class="ready-btn page-scroll" href="#about">Learn More</a>
+            <!-- Single Slider -->
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-7 col-md-8">
+                            <div class="hero__caption">
+                                <span data-animation="fadeInLeft" data-delay=".1s">Committed to success</span>
+                                <h1 data-animation="fadeInLeft" data-delay=".5s" >We help to grow your business</h1>
+                                <p data-animation="fadeInLeft" data-delay=".9s">Mollit anim laborum.Dvcuis aute serunt  iruxvfg dhjkolohr indd re voluptate<br> velit esscillumlore eu quife nrulla parihatur.</p>
+                                <!-- Hero-btn -->
+                                <div class="hero__btn" data-animation="fadeInLeft" data-delay="1.1s">
+                                    <a href="industries.html" class="btn hero-btn">Our Services</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>          
             </div>
         </div>
     </div>
-</div>
-<!-- End Slider Area -->
+    <!-- slider Area End-->
 
-<!-- Start Service area -->
-<div id="services" class="services-area area-padding" style="background-color: darkgrey">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-headline services-head text-center">
-                    <h2>Here's What to Do Next</h2>
+    <!--? About Area Start-->
+    <div id="about" class="support-company-area pt-100 pb-100 section-bg fix" data-background="assets/img/gallery/section_bg02.jpg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="support-location-img">
+                        <img src="assets/img/gallery/about.png" alt="">
+                    </div>
                 </div>
-                <br>
-            </div>
-        </div>
-        <div class="col-md-12 ">
-            <div>
-                <div class="single-well">
-                    <h4 class="text-center">
-                        Subscribe below and become a better trader today, You'll get &nbsp;:
-                    </h4>
-                    <ul>
-                        <li>
-                            <p style="font-size:18px;"><i class="fa fa-check"></i>Practical trading strategies and
-                                techniques you can use in your trading today.</p>
-                        </li>
-                        <li>
-                            <p style="font-size:18px;"><i class="fa fa-check"></i>A weekly analysis of Indonesia Stock
-                                Market so you're prepared for the week ahead.</p>
-                        </li>
-                        <li>
-                            <p style="font-size:18px;"><i class="fa fa-check"></i>Access to a H A K A private trading
-                                community of more than 1000 traders so you can interact and learn together.
+                <div class="col-xl-6 col-lg-6">
+                    <div class="right-caption">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle section-tittle2 mb-50">
+                            <span>Our Top Services</span>
+                            <h2>About Us</h2>
+                        </div>
+                        <div class="support-caption">
+                            <p class="pera-top">
+                                HAKA was created with the vision of becoming the most trusted stock trading community in Indonesia. HAKA is one of the most famous and fastest-growing community of traders in Indonesia. HAKA shortly became well-known for sharing unique-written content which many traders found interesting and helpful.
                             </p>
-                        </li>
-                    </ul>
-                    <br>
-                    <p style="font-size:18px;">Thanks for reading and We'll see you on the battlefield!</p>
-                    <br>
-                    <p style="font-size:18px;">HAKA</p>
+                            {{--<ul>--}}
+                                {{--<li class="text-white"><p>Practical trading strategies and techniques you can use in your trading today.</p></li>--}}
+                                {{--<li class="text-white"><p>A weekly analysis of Indonesia Stock Market so you're prepared for the week ahead.</p></li>--}}
+                            {{--</ul>--}}
+                            {{--<p class="mb-65">Mollit anim laborum.Dvcuis aute serunt  iruxvfg dhjkolohr indd re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt moll.</p>--}}
+                            <a href="about.html" class="btn post-btn">More About Us</a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
-</div>
-<!-- End Service area -->
+    <!-- About Area End-->
 
-<!-- Start About area -->
-<div id="about" class="about-area area-padding" style="background-color: white">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="section-headline text-center">
-                    <h2>About Us</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <!-- single-well start-->
-            <div class="col-md-12">
-                <a href="#">
-                    <img src="{{ asset('app/img/haka.jpeg') }}" alt="" class="img-responsive center-block"
-                         style="height: 250px;width:200px">
-                </a>
-                <br>
-                <p style="font-size: 15px">
-                    HAKA was created with the vision of becoming the most trusted stock trading community in Indonesia.
-                    HAKA is one of the most famous and fastest-growing community of traders in Indonesia.
-                    HAKA shortly became well-known for sharing unique-written content which many traders found
-                    interesting and helpful.
-                </p>
-                <ul>
-                    <li>
-                        <p style="font-size: 15px"><i class="fa fa-check"></i> Practical trading strategies and
-                            techniques you can use in your trading today.</p>
-                    </li>
-                    <li>
-                        <p style="font-size: 15px"><i class="fa fa-check"></i> A weekly analysis of Indonesia Stock
-                            Market so you're prepared for the week ahead.</p>
-                    </li>
-                    <li>
-                        <p style="font-size: 15px"><i class="fa fa-check"></i> Access to a H A K A private trading
-                            community of more than 1000 traders so you can interact and learn together.</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End About area -->
-
-<!-- Start program Area -->
-<div id="program" class="blog-area">
-    <div class="blog-inner area-padding">
-        <div class="blog-overly"></div>
-        <div class="container ">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-headline text-center">
-                        <h2>Programs</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Start Left Blog -->
-                @foreach($programs as $program)
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-blog">
-                            <div class="single-blog-img">
-                                <a href="blog.html">
-                                    <img src="{{ $program->featured }}" alt="" style="height: 200px;width:400px;">
-                                </a>
-                            </div>
-                            <div class="blog-meta">
-                  <span class="comments-type">
-                      @foreach($program->tags as $t)
-                          <a href="#">{{$t->tag}}</a>
-                      @endforeach
-                  </span>
-                                <span class="date-type pull-right">
-                      <i class="fa fa-calendar"></i>{{$program->created_at->toFormattedDateString()}}
-                  </span>
-                            </div>
-                            <div class="blog-text">
-                                <h4>
-                                    <a href="blog.html">{{$program->title}}</a>
-                                </h4>
-                                <p>
-                                    {!! str_limit(strip_tags($program->content), 150) !!}
-                                </p>
-                            </div>
-                            <span>
-                    <a href="{{route('programs')}}" class="ready-btn">Read more</a>
-                </span>
-                        </div>
-                        <!-- Start single blog -->
-                    </div>
-            @endforeach
-            <!-- End Left Blog-->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Blog -->
-
-<!-- Start recomend Area -->
-<div id="recomend" class="blog-area">
-    <div class="blog-inner area-padding">
-        <div class="blog-overly"></div>
-        <div class="container ">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-headline text-center">
-                        <h2>Recomendation</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Start Left Blog -->
-                @foreach($contents as $content)
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-blog">
-                            <div class="single-blog-img">
-                                <a href="blog.html">
-                                    <img src="{{ $content->featured }}" alt="" style="height: 200px;width:400px;">
-                                </a>
-                            </div>
-                            <div class="blog-meta">
-                  <span class="comments-type">
-                      @foreach($content->tags as $t)
-                          <a href="#">{{$t->tag}}</a>
-                      @endforeach
-                  </span>
-                                <span class="date-type pull-right">
-                      <i class="fa fa-calendar"></i>{{$content->created_at->toFormattedDateString()}}
-                  </span>
-                            </div>
-                            <div class="blog-text">
-                                <h4>
-                                    <a href="blog.html">{{$content->title}}</a>
-                                </h4>
-                                <p>
-                                    {!! str_limit(strip_tags($content->content), 150) !!}
-                                </p>
-                            </div>
-                            <span>
-                    <a href="{{route('master.content')}}" class="ready-btn">Read more</a>
-                </span>
-                        </div>
-                        <!-- Start single blog -->
-                    </div>
-            @endforeach
-            <!-- End Left Blog-->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Blog -->
-
-<!-- Start Screener Area -->
-<div id="screeners" class="our-team-area area-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="section-headline text-center">
-                    <h2>Screeners</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="team-top">
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="single-team-member">
-                        <div class="team-img">
-                            <a href="{{ route('frontend.breakout')  }}">
-                                <img src="{{ asset('app/img/ranking_vol.jpeg')  }}" alt="" class="img-responsive"
-                                     style="height: 370px;">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End column -->
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="single-team-member">
-                        <div class="team-img">
-                            <a href="{{ route('frontend.trend-reversal')  }}">
-                                <img src="{{ asset('app/img/bandarmology.jpeg')  }}" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End column -->
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="single-team-member">
-                        <div class="team-img">
-                            <a href="{{ route('frontend.boom')  }}">
-                                <img src="{{ asset('app/img/breakout.jpeg')  }}" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End column -->
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="single-team-member">
-                        <div class="team-img">
-                            <a href="{{ route('frontend.foreign-accumulation')  }}">
-                                <img src="{{ asset('app/img/foreign_accum.jpeg') }}" alt="" class="img-responsive">
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- End column -->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Team Area -->
-
-{{--Articles--}}
-<div id="articles" class="blog-area">
-    <div class="blog-inner area-padding">
-        <div class="blog-overly"></div>
-        <div class="container ">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-headline text-center">
-                        <h2>Articles</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Start Left Blog -->
-                @foreach($articles as $article)
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-blog">
-                            <div class="single-blog-img">
-                                <a href="blog.html">
-                                    <img src="{{ $article->featured }}" alt="" style="height: 200px;width:400px;">
-                                </a>
-                            </div>
-                            <div class="blog-meta">
-                  <span class="comments-type">
-                      @foreach($article->tags as $t)
-                          <a href="#">{{$t->tag}}</a>
-                      @endforeach
-                  </span>
-                                <span class="date-type pull-right">
-                      <i class="fa fa-calendar"></i>{{$article->created_at->toFormattedDateString()}}
-                  </span>
-                            </div>
-                            <div class="blog-text">
-                                <h4>
-                                    <a href="blog.html">{{$article->title}}</a>
-                                </h4>
-                                <p>
-                                    {!! str_limit(strip_tags($article->content), 150) !!}
-                                </p>
-                            </div>
-                            <span>
-                    <a href="{{route('article')}}" class="ready-btn">Read more</a>
-                </span>
-                        </div>
-                        <!-- Start single blog -->
-                    </div>
-            @endforeach
-            <!-- End Left Blog-->
-            </div>
-        </div>
-    </div>
-</div>
-{{--END Articles--}}
-
-<!-- Start Wellcome Area -->
-<div class="wellcome-area">
-    <div class="well-bg">
-        <div class="test-overly"></div>
+    <!--? Services Area Start -->
+    <div id="services" class="categories-area section-padding30">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="wellcome-text">
-                        <div class="well-text text-center">
-                            <h2>Subscribe Become a Better Trader Today</h2>
-                            <p>
-                                Get Practical trading strategies and techniques that work.
-                            </p>
-                            <div class="subs-feilds">
-                                <form action="{{ route('subscriber')  }}" method="post">
-                                    {{ csrf_field() }}
-                                    <div class="suscribe-input">
-                                        <input type="email" class="email form-control width-80" id="sus_email"
-                                               placeholder="Email" name="email">
-                                        <button type="submit" id="sus_submit" class="add-btn width-20">Subscribe
-                                        </button>
-                                        <div id="msg_Submit" class="h3 text-center hidden"></div>
-                                    </div>
-                                </form>
+                <div class="col-lg-12">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle mb-70">
+                        <span>Our Top Services</span>
+                        <h2>Our Best Services</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center mb-50">
+                        <div class="cat-icon">
+                            <span class="flaticon-development"></span>
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">Practical Trading Strategies </a></h5>
+                            <p>Practical trading strategies and techniques you can use in your trading today.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center mb-50">
+                        <div class="cat-icon">
+                            <span class="flaticon-result"></span>
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">Weekly Analysis</a></h5>
+                            <p>A weekly analysis of Indonesia Stock Market so you're prepared for the week ahead.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center mb-50">
+                        <div class="cat-icon">
+                            <span class="flaticon-team"></span>
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">Private Trading Community</a></h5>
+                            <p>Access HAKA private trading community, so you can interact and learn together.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services Area End -->
+
+    <!-- Recommendation Area Start -->
+    <div id="recommendations" class="home-blog-area section-padding30" style="background-color: lightblue">
+        <div class="container">
+            <!-- Section Tittle -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-tittle mb-100">
+                        <span>Our Recommendations</span>
+                        <h2>Recommendations</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="home-blog-single mb-30">
+                        <div class="blog-img-cap">
+                            <div class="blog-img">
+                                <img src="assets/img/gallery/home_blog1.png" alt="">
+                                <ul>
+                                    <li>By Admin   -   October 27, 2020</li>
+                                </ul>
+                            </div>
+                            <div class="blog-cap">
+                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
+                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
+                                <a href="blog_details.html" class="more-btn">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="home-blog-single mb-30">
+                        <div class="blog-img-cap">
+                            <div class="blog-img">
+                                <img src="assets/img/gallery/home_blog2.png" alt="">
+                                <ul>
+                                    <li>By Admin   -   October 27, 2020</li>
+                                </ul>
+                            </div>
+                            <div class="blog-cap">
+                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
+                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
+                                <a href="blog_details.html" class="more-btn">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="home-blog-single mb-30">
+                        <div class="blog-img-cap">
+                            <div class="blog-img">
+                                <img src="assets/img/gallery/home_blog2.png" alt="">
+                                <ul>
+                                    <li>By Admin   -   October 27, 2020</li>
+                                </ul>
+                            </div>
+                            <div class="blog-cap">
+                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
+                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
+                                <a href="blog_details.html" class="more-btn">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="home-blog-single mb-30">
+                        <div class="blog-img-cap">
+                            <div class="blog-img">
+                                <img src="assets/img/gallery/home_blog2.png" alt="">
+                                <ul>
+                                    <li>By Admin   -   October 27, 2020</li>
+                                </ul>
+                            </div>
+                            <div class="blog-cap">
+                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
+                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
+                                <a href="blog_details.html" class="more-btn">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -632,154 +328,341 @@
             </div>
         </div>
     </div>
-</div>
-<!-- End Wellcome Area -->
+    <!-- Recommendation Area End -->
 
-<!-- Start trading Area -->
-<div id="trading" class="blog-area">
-    <div class="blog-inner area-padding">
-        <div class="blog-overly"></div>
+    <!-- Screeners Start -->
+    <div id="screeners" class="team-area section-padding30" style="background-color: white">
+        <div class="container">
+            <div class="row">
+                <div class="cl-xl-7 col-lg-8 col-md-10">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle mb-70">
+                        <span>Our Screeners </span>
+                        <h2>Screeners</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- single Tem -->
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="img/resized/bandar.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="img/resized/volume.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="img/resized/breakout.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="img/resized/foreign.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Screeners End -->
+
+    <!-- Youtube Start -->
+    <div class="team-area section-padding30">
+        <div class="container">
+            <div class="row">
+                {{--<div class="cl-xl-7 col-lg-8 col-md-10">--}}
+                    {{--<div class="section-tittle mb-70">--}}
+                        {{--<span>Our Youtube </span>--}}
+                        {{--<h2>Introduction</h2>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-">
+                    <div id="container_youtube">
+                        <iframe class="responsive-iframe"
+                                src="https://www.youtube.com/embed/JCf5oRKhJgU?controls=0"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Youtube End -->
+
+    <!-- Want To work -->
+    <section class="wantToWork-area w-padding2 section-bg" data-background="assets/img/gallery/section_bg03.jpg">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-7 col-lg-9 col-md-8">
+                    <div class="wantToWork-caption wantToWork-caption2">
+                        <h2>Want to learn how to become a consistently profitable trader?<br> Then youre in the right place.</h2>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4">
+                    <a href="#" class="btn btn-black f-right">More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Want To work End -->
+
+    <!--? Testimonial Start -->
+    <div class="testimonial-area testimonial-padding" data-background="assets/img/gallery/section_bg04.jpg">
         <div class="container ">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-headline text-center">
-                        <h2>Trading Guides</h2>
-                    </div>
-                </div>
-                a
-            </div>
-            <div class="row">
-                <!-- Start Left Blog -->
-                @foreach($tradingGuides as $tradingGuide)
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-blog">
-                            <div class="single-blog-img">
-                                <a href="blog.html">
-                                    <img src="{{ $tradingGuide->featured }}" alt="" style="height: 200px;width:400px;">
-                                </a>
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-10 col-lg-10 col-md-9">
+                    <div class="h1-testimonial-active">
+                        <!-- Single Testimonial -->
+                        <div class="single-testimonial text-center">
+                            <!-- Testimonial Content -->
+                            <div class="testimonial-caption ">
+                                <div class="testimonial-top-cap">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="67px" height="49px">
+                                    <path fill-rule="evenodd"  fill="rgb(240, 78, 60)"
+                                    d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"/>
+                                    </svg>
+                                    <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis por incididunt ut labore et dolore mas. </p>
+                                </div>
+                                <!-- founder -->
+                                <div class="testimonial-founder d-flex align-items-center justify-content-center">
+                                    <div class="founder-img">
+                                        <img src="assets/img/gallery/Homepage_testi.png" alt="">
+                                    </div>
+                                    <div class="founder-text">
+                                        <span>Jessya Inn</span>
+                                        <p>Chif Photographer</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="blog-meta">
-                  <span class="comments-type">
-                      @foreach($tradingGuide->tags as $t)
-                          <a href="#">{{$t->tag}}</a>
-                      @endforeach
-                  </span>
-                                <span class="date-type pull-right">
-                      <i class="fa fa-calendar"></i>{{$tradingGuide->created_at->toFormattedDateString()}}
-                  </span>
-                            </div>
-                            <div class="blog-text">
-                                <h4>
-                                    <a href="blog.html">{{$tradingGuide->title}}</a>
-                                </h4>
-                                <p>
-                                    {!! str_limit(strip_tags($tradingGuide->content), 150) !!}
-                                </p>
-                            </div>
-                            <span>
-                    <a href="{{route('trading.guides')}}" class="ready-btn">Read more</a>
-                </span>
                         </div>
-                        <!-- Start single blog -->
-                    </div>
-            @endforeach
-            <!-- End Left Blog-->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Blog -->
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-center m-auto">
-            <h2>Happy Clients</h2>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Carousel indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <!-- Wrapper for carousel items -->
-                <div class="carousel-inner">
-                    <div class="item carousel-item active">
-                        <div class="img-box"><img src="/examples/images/clients/1.jpg" alt=""></div>
-                        <p class="testimonial">
-                            Haka premium membantu saya untuk trading harian, swing maupun invest. Pagi sblm market mulai
-                            sdh dikasih rekomendasi buat haka /swing. Pas selesai session 1 selalu dikasih ulasan apa
-                            yang dibeli asing dan volumenya. Begitu pula pas jam trading diberikan rekomendasi apa yg
-                            bisa di haka. Setiap ada pertanyaan juga selalu cepat dijawab. Top deh pokoknya, terimakasih
-                            haka premium.
-                        </p>
-                        <p class="overview"><b>Mia</b></p>
-                    </div>
-                    <div class="item carousel-item">
-                        <div class="img-box"><img src="/examples/images/clients/2.jpg" alt=""></div>
-                        <p class="testimonial">
-                            Sebagai seorang trader pemula, memilih saham yang tepat merupakan pilihan yang tergolong
-                            sulit, namun setelah bergabung dengan HAKA premium, hal ini bukan menjadi kendala lagi,
-                            karena di HAKA premium rekomendasi dan juga timing yang di berikan tepat sasaran dan di
-                            dukung dengan analisa yang kuat, sehingga kita dapat membantu untuk memilih saham yang
-                            tepat, terima kasih HAKA premium. </p>
-                        <p class="overview"><b>Elifas Felix</b></p>
-                    </div>
-                    <div class="item carousel-item">
-                        <div class="img-box"><img src="/examples/images/clients/3.jpg" alt=""></div>
-                        <p class="testimonial">Sejak gabung di HAKA premium, alhamdulillah tiap harinya profit terus.
-                            Trading kian mantap & gak galau lagi. Gak ada lg yg namanya perasaan was-was saat trading.
-                            Di tambah dengan rekomendasi & saran yg sangat membantu sekali dlm trading. Plus info market
-                            yg cepat & up to date tiap harinya. HAKA premium jodoh terbaik untuk trading saya....gak
-                            bakalan pindah ke lain.</p>
-                        <p class="overview"><b>Okta</b></p>
+                        <!-- Single Testimonial -->
+                        <div class="single-testimonial text-center">
+                            <!-- Testimonial Content -->
+                            <div class="testimonial-caption ">
+                                <div class="testimonial-top-cap">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="67px" height="49px">
+                                    <path fill-rule="evenodd"  fill="rgb(240, 78, 60)"
+                                    d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"/>
+                                    </svg>
+                                    <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis por incididunt ut labore et dolore mas. </p>
+                                </div>
+                                <!-- founder -->
+                                <div class="testimonial-founder d-flex align-items-center justify-content-center">
+                                    <div class="founder-img">
+                                        <img src="assets/img/gallery/Homepage_testi.png" alt="">
+                                    </div>
+                                    <div class="founder-text">
+                                        <span>Jessya Inn</span>
+                                        <p>Chif Photographer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Carousel controls -->
-                <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
-                    <i class="fa fa-angle-right"></i>
-                </a>
             </div>
         </div>
     </div>
+    <!-- Testimonial End -->
+
+    <!-- Coun Down Start -->
+    <div class="count-down-area pb-120">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- Counter Up -->
+                    <div class="single-counter text-center">
+                        <span class="counter">8705</span>
+                        <p>Projects Completed</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- Counter Up -->
+                    <div class="single-counter active text-center">
+                        <span class="counter">480</span>
+                        <p> Active Clients</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- Counter Up -->
+                    <div class="single-counter text-center">
+                        <span class="counter">626</span>
+                        <p>Cups of Coffee</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- Counter Up -->
+                    <div class="single-counter text-center">
+                        <span class="counter">9774</span>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Coun Down End -->
+
+</main>
+<footer>
+    <!--? Footer Start-->
+    <div class="footer-area section-bg" data-background="assets/img/gallery/footer_bg.jpg">
+        <div class="container">
+            <div class="footer-top footer-padding">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-4 col-md-5 col-sm-8">
+                        <div class="single-footer-caption mb-50">
+                            <!-- logo -->
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                            </div>
+                            <div class="footer-tittle">
+                                <div class="footer-pera">
+                                    <p class="info1">Receive updates and latest news direct from Simply enter.</p>
+                                </div>
+                            </div>
+                            <div class="footer-number">
+                                <h4><span>+564 </span>7885 3222</h4>
+                                <p>youremail@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Location </h4>
+                                <ul>
+                                    <li><a href="#">Advanced</a></li>
+                                    <li><a href="#"> Management</a></li>
+                                    <li><a href="#">Corporate</a></li>
+                                    <li><a href="#">Customer</a></li>
+                                    <li><a href="#">Information</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Explore</h4>
+                                <ul>
+                                    <li><a href="#">Cookies</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Proparties</a></li>
+                                    <li><a href="#">Licenses</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Location</h4>
+                                <div class="footer-pera">
+                                    <p class="info1">Subscribe now to get daily updates</p>
+                                </div>
+                            </div>
+                            <!-- Form -->
+                            <div class="footer-form">
+                                <div id="mc_embed_signup">
+                                    <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                        <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'">
+                                        <div class="form-icon">
+                                            <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                                SIGN UP
+                                            </button>
+                                        </div>
+                                        <div class="mt-10 info"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-xl-9 col-lg-8">
+                        <div class="footer-copy-right">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4">
+                        <!-- Footer Social -->
+                        <div class="footer-social f-right">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End-->
+</footer>
+<!-- Scroll Up -->
+<div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
 </div>
 
-<!-- Start Footer bottom Area -->
-<footer>
-    @include('layouts.frontend.footer')
-</footer>
+    <!-- JS here -->
 
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <script src="{{  asset('assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="{{  asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{  asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{  asset('assets/js/bootstrap.min.js') }}"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="{{  asset('assets/js/jquery.slicknav.min.js') }}"></script>
 
-<!-- JavaScript Libraries -->
-<script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('lib/bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('lib/venobox/venobox.min.js') }}"></script>
-<script src="{{ asset('lib/knob/jquery.knob.js') }}"></script>
-<script src="{{ asset('lib/wow/wow.min.js') }}"></script>
-<script src="{{ asset('lib/parallax/parallax.js') }}"></script>
-<script src="{{ asset('lib/easing/easing.min.js') }}"></script>
-<script src="{{ asset('lib/nivo-slider/js/jquery.nivo.slider.js') }}" type="text/javascript"></script>
-<script src="{{ asset('lib/appear/jquery.appear.js') }}"></script>
-<script src="{{ asset('lib/isotope/isotope.pkgd.min.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
-<!-- Contact Form JavaScript File -->
-<script src="{{ asset('contactform/contactform.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
-{{--  <script src="{{ asset('js/app.js') }}"></script>--}}
-<script src="{{ asset('js/toastr.min.js') }}"></script>
-<script>
-    @if (Session::has('success'))
-    toastr.success("{{ Session::get('success') }}")
-    @endif
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="{{  asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{  asset('assets/js/slick.min.js') }}"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="{{  asset('assets/js/wow.min.js') }}"></script>
+    <script src="{{  asset('assets/js/animated.headline.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.js') }}"></script>
 
-    @if (Session::has('info'))
-    toastr.info("{{ Session::get('info') }}")
-    @endif
-</script>
-</body>
+    <!-- Nice-select, sticky -->
+    <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{  asset('assets/js/jquery.sticky.js') }}"></script>
 
+    <!-- counter , waypoint -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="{{  asset('assets/js/jquery.counterup.min.js') }}"></script>
+    
+    <!-- contact js -->
+    <script src="{{  asset('assets/js/contact.js') }}"></script>
+    <script src="{{  asset('assets/js/jquery.form.js') }}"></script>
+    <script src="{{  asset('assets/js/jquery.validate.min.js') }}"></script>
+    <script src="{{  asset('assets/js/mail-script.js') }}"></script>
+    <script src="{{  asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="{{ asset('assets/js/plugins.js') }}"></script>
+    <script src="{{  asset('assets/js/main.js') }}"></script>
+        
+    </body>
 </html>
