@@ -6,31 +6,41 @@ use App\Post;
 use App\Category;
 use App\Setting;
 use App\Profile;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
     //
     public function index()
     {
-        $tradingGuides = Post::whereHas('tags', function ($query) {
-            $query->where('tag_id', 1);
-        })->with('tags')->orderBy('created_at')->take(3)->get();
-        $contents = Post::whereHas('tags', function ($query) {
-            $query->where('tag_id', 2);
-        })->with('tags')->take(3)->latest()->get();
-        $programs = Post::whereHas('tags', function ($query) {
-            $query->where('tag_id', 3);
-        })->with('tags')->orderBy('created_at')->take(3)->get();
-        $articles = Post::whereHas('tags', function ($query) {
-            $query->where('tag_id', 4);
-        })->with('tags')->orderBy('created_at')->take(3)->get();
-        $setting = Setting::first();
-        $profile = Profile::first();
+        $recommendationId = 2;
+        $postTags = DB::table('post_tag')
+            ->where('tag_id', $recommendationId)
+            ->pluck('post_id');
+        $recommendations = Post::whereIn('id', $postTags)
+            ->whereNull('deleted_at')
+            ->get()
+            ->sortByDesc('created_at');
+//        dd($postTags);
+
+//        dd($recommendations->toArray());
+//        $contents = Post::whereHas('tags', function ($query) {
+//            $query->where('tag_id', 2);
+//        })->with('tags')->take(3)->latest()->get();
+//        $programs = Post::whereHas('tags', function ($query) {
+//            $query->where('tag_id', 3);
+//        })->with('tags')->orderBy('created_at')->take(3)->get();
+//        $articles = Post::whereHas('tags', function ($query) {
+//            $query->where('tag_id', 4);
+//        })->with('tags')->orderBy('created_at')->take(3)->get();
+//        $setting = Setting::first();
+//        $profile = Profile::first();
 
 //        dd($profile);
 
-        return view('layouts.frontend', compact('contents', 'setting', 'profile', 'tradingGuides', 'programs', 'articles'));
+        return view('layouts.frontend', compact('recommendations'));
     }
 
     public function masterContent()

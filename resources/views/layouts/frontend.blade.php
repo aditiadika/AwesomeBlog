@@ -257,74 +257,27 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($recommendations->take(4) as $recommendation)
                 <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="home-blog-single mb-30">
                         <div class="blog-img-cap">
                             <div class="blog-img">
-                                <img src="assets/img/gallery/home_blog1.png" alt="">
+                                <img src="{{ $recommendation->featured }}" alt="">
                                 <ul>
-                                    <li>By Admin   -   October 27, 2020</li>
+                                    <li>By Admin   -   {{ $recommendation->created_at->diffForHumans() }}</li>
                                 </ul>
                             </div>
                             <div class="blog-cap">
-                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
+                                <h3><a href="blog_details.html">{{ $recommendation->title }}</a></h3>
+                                <p>
+                                    {!! str_limit(strip_tags($recommendation->content), 100) !!}
+                                </p>
                                 <a href="blog_details.html" class="more-btn">Read more</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <img src="assets/img/gallery/home_blog2.png" alt="">
-                                <ul>
-                                    <li>By Admin   -   October 27, 2020</li>
-                                </ul>
-                            </div>
-                            <div class="blog-cap">
-                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
-                                <a href="blog_details.html" class="more-btn">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <img src="assets/img/gallery/home_blog2.png" alt="">
-                                <ul>
-                                    <li>By Admin   -   October 27, 2020</li>
-                                </ul>
-                            </div>
-                            <div class="blog-cap">
-                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
-                                <a href="blog_details.html" class="more-btn">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <img src="assets/img/gallery/home_blog2.png" alt="">
-                                <ul>
-                                    <li>By Admin   -   October 27, 2020</li>
-                                </ul>
-                            </div>
-                            <div class="blog-cap">
-                                <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                                <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra.</p>
-                                <a href="blog_details.html" class="more-btn">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
