@@ -40,7 +40,7 @@ class FrontendController extends Controller
 
 //        dd($profile);
 
-        return view('layouts.frontend', compact('recommendations'));
+        return view('frontend.index', compact('recommendations'));
     }
 
     public function masterContent()
@@ -65,7 +65,7 @@ class FrontendController extends Controller
         $setting = Setting::first();
         $profile = Profile::first();
 
-        return view('blog.analysis-detail', compact('post', 'recentPosts', 'categories', 'profile', 'setting'));
+        return view('frontend.recommendation_detail', compact('post', 'recentPosts', 'categories', 'profile', 'setting'));
     }
 
     public function category($id)
