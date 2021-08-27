@@ -154,7 +154,7 @@
                                 </ul>
                             </div>
                             <div class="blog-cap">
-                                <h3><a href="blog_details.html">{{ $recommendation->title }}</a></h3>
+                                <h3><a href="{{ route('post.single', $recommendation->slug) }}">{{ $recommendation->title }}</a></h3>
                                 <p>
                                     {!! str_limit(strip_tags($recommendation->content), 100) !!}
                                 </p>
@@ -165,6 +165,9 @@
                 </div>
                 @endforeach
             </div>
+        </div>
+        <div class="text-center">
+            <a href="{{ route('master.content') }}" class="btn btn-primary btn-sm text-center">Load More</a>
         </div>
     </div>
     <!-- Recommendation Area End -->

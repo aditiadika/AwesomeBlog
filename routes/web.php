@@ -16,12 +16,12 @@ Route::get('/', [
     'as'    => 'index'
 ]);
 
-Route::get('/master-content', [
+Route::get('/recommendation', [
     'uses' => 'FrontendController@masterContent',
     'as'    => 'master.content'
 ]);
 
-Route::get('/master-content/{slug}', [
+Route::get('/recommendation/{slug}', [
     'uses' => 'FrontendController@singlePost',
     'as'    => 'post.single'
 ]);

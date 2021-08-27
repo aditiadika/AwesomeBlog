@@ -23,49 +23,41 @@ class FrontendController extends Controller
             ->whereNull('deleted_at')
             ->get()
             ->sortByDesc('created_at');
-//        dd($postTags);
-
-//        dd($recommendations->toArray());
-//        $contents = Post::whereHas('tags', function ($query) {
-//            $query->where('tag_id', 2);
-//        })->with('tags')->take(3)->latest()->get();
-//        $programs = Post::whereHas('tags', function ($query) {
-//            $query->where('tag_id', 3);
-//        })->with('tags')->orderBy('created_at')->take(3)->get();
-//        $articles = Post::whereHas('tags', function ($query) {
-//            $query->where('tag_id', 4);
-//        })->with('tags')->orderBy('created_at')->take(3)->get();
-//        $setting = Setting::first();
-//        $profile = Profile::first();
-
-//        dd($profile);
 
         return view('frontend.index', compact('recommendations'));
     }
 
     public function masterContent()
     {
-        $setting = Setting::first();
-        $profile = Profile::first();
-        $contents = Post::orderBy('created_at')->take(5)->paginate(5);
-        $contentNotActives = Post::whereHas('tags', function ($query) {
-            $query->where('tag_id', 2);
-        })->with('tags')->take(5)->latest()->paginate(5);
-        $recentPosts = Post::orderBy('created_at')->take(3)->get();
-        $categories = Category::all();
+        $recommendationId = 2;
+        $postTags = DB::table('post_tag')
+            ->where('tag_id', $recommendationId)
+            ->pluck('post_id');
+        $recommendations = Post::whereIn('id', $postTags)
+            ->whereNull('deleted_at')
+            ->latest()
+            ->paginate(5);
 
-        return view('blog.analysis', compact('contentNotActives','contents', 'profile', 'setting', 'recentPosts', 'categories'));
+        return view('frontend.recommendation', compact('recommendations'));
     }
 
     public function singlePost($slug)
     {
         $post = Post::where('slug', $slug)->first();
-        $recentPosts = Post::orderBy('created_at')->take(3)->get();
-        $categories = Category::all();
-        $setting = Setting::first();
-        $profile = Profile::first();
 
-        return view('frontend.recommendation_detail', compact('post', 'recentPosts', 'categories', 'profile', 'setting'));
+        $recommendationId = 2;
+        $postTags = DB::table('post_tag')
+            ->where('tag_id', $recommendationId)
+            ->where('post_id', '!=', $post->id)
+            ->pluck('post_id');
+        $recommendations = Post::whereIn('id', $postTags)
+            ->whereNull('deleted_at')
+            ->latest()
+            ->take(4)
+            ->get()
+            ->sortByDesc('created_at');
+
+        return view('frontend.recommendation_detail', compact('post', 'recommendations'));
     }
 
     public function category($id)
