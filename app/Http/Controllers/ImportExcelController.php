@@ -185,7 +185,7 @@ class ImportExcelController extends Controller
 
     public function frontendIndexTrendReversal()
     {
-        return view('excel-frontend.trend-reversal');
+        return view('frontend.bandar_monology');
     }
 
     public function frontendPostTrendReversal(Request $request)

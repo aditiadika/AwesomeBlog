@@ -189,7 +189,9 @@
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-">
                     <div class="single-team mb-30">
                         <div class="team-img">
-                            <img src="img/resized/bandar.jpeg" alt="">
+                            <a href="{{ route('frontend.trend-reversal') }}">
+                                <img src="img/resized/bandar.jpeg" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>

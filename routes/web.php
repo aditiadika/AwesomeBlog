@@ -48,29 +48,29 @@ Route::get('/programs/{slug}', [
     'as'    => 'detail.programs'
 ]);
 
-Route::get('/breakout', [
+Route::get('/ranking-volume', [
     'uses' => 'ImportExcelController@frontendIndexBreakout',
     'as'    => 'frontend.breakout'
 ]);
-Route::post('/breakout-data', [
+Route::post('/ranking-volume', [
     'uses' => 'ImportExcelController@frontendPostBreakout',
     'as'    => 'frontend.breakout-post'
 ]);
 
-Route::get('/trend-reversal', [
+Route::get('/bandarmology', [
     'uses' => 'ImportExcelController@frontendIndexTrendReversal',
     'as'    => 'frontend.trend-reversal'
 ]);
-Route::post('/trend-reversal-data', [
+Route::post('/bandarmology', [
     'uses' => 'ImportExcelController@frontendPostTrendReversal',
     'as'    => 'frontend.trend-reversal-post'
 ]);
 
-Route::get('/boom', [
+Route::get('/breakout', [
     'uses' => 'ImportExcelController@frontendIndexBoom',
     'as'    => 'frontend.boom'
 ]);
-Route::post('/boom-data', [
+Route::post('/breakout', [
     'uses' => 'ImportExcelController@frontendPostBoom',
     'as'    => 'frontend.boom-post'
 ]);

@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
-    //
     public function index()
     {
         $recommendationId = 2;

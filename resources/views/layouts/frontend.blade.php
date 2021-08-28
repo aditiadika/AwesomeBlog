@@ -21,6 +21,8 @@
 	<link rel="stylesheet" href="{{  asset('assets/css/slick.css') }}">
 	<link rel="stylesheet" href="{{  asset('assets/css/nice-select.css') }}">
 	<link rel="stylesheet" href="{{  asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css">
 
     <style>
         #container_youtube {
@@ -234,6 +236,11 @@
     <!-- Jquery Mobile Menu -->
     <script src="{{  asset('assets/js/jquery.slicknav.min.js') }}"></script>
 
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap.min.js"></script>
+
     <!-- Jquery Slick , Owl-Carousel Plugins -->
     <script src="{{  asset('assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{  asset('assets/js/slick.min.js') }}"></script>
@@ -260,6 +267,8 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
     <script src="{{  asset('assets/js/main.js') }}"></script>
-        
+
+    @yield('scripts')
+
     </body>
 </html>
