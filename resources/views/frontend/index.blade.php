@@ -198,21 +198,27 @@
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-">
                     <div class="single-team mb-30">
                         <div class="team-img">
-                            <img src="img/resized/volume.jpeg" alt="">
+                            <a href="{{ route('frontend.breakout') }}">
+                                <img src="img/resized/volume.jpeg" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-">
                     <div class="single-team mb-30">
                         <div class="team-img">
-                            <img src="img/resized/breakout.jpeg" alt="">
+                            <a href="{{ route('frontend.boom') }}">
+                                <img src="img/resized/breakout.jpeg" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-">
                     <div class="single-team mb-30">
                         <div class="team-img">
-                            <img src="img/resized/foreign.jpeg" alt="">
+                            <a href="{{ route('frontend.foreign-accumulation') }}">
+                                <img src="img/resized/foreign.jpeg" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -281,16 +287,15 @@
                                     <path fill-rule="evenodd"  fill="rgb(240, 78, 60)"
                                     d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"/>
                                     </svg>
-                                    <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis por incididunt ut labore et dolore mas. </p>
+                                    <p>Sejak gabung di HAKA premium, alhamdulillah tiap harinya profit terus. Trading kian mantap & gak galau lagi. Gak ada lg yg namanya perasaan was-was saat trading. Di tambah dengan rekomendasi & saran yg sangat membantu sekali dlm trading. Plus info market yg cepat & up to date tiap harinya. HAKA premium jodoh terbaik untuk trading saya....gak bakalan pindah ke lain.</p>
                                 </div>
                                 <!-- founder -->
                                 <div class="testimonial-founder d-flex align-items-center justify-content-center">
                                     <div class="founder-img">
-                                        <img src="assets/img/gallery/Homepage_testi.png" alt="">
+                                        <img src="https://via.placeholder.com/80" class="rounded-circle" alt="">
                                     </div>
                                     <div class="founder-text">
-                                        <span>Jessya Inn</span>
-                                        <p>Chif Photographer</p>
+                                        <span>Okta</span>
                                     </div>
                                 </div>
                             </div>
@@ -306,16 +311,38 @@
                                     <path fill-rule="evenodd"  fill="rgb(240, 78, 60)"
                                     d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"/>
                                     </svg>
-                                    <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis por incididunt ut labore et dolore mas. </p>
+                                    <p>Haka premium membantu saya untuk trading harian, swing maupun invest. Pagi sblm market mulai sdh dikasih rekomendasi buat haka /swing. Pas selesai session 1 selalu dikasih ulasan apa yang dibeli asing dan volumenya. Begitu pula pas jam trading diberikan rekomendasi apa yg bisa di haka. Setiap ada pertanyaan juga selalu cepat dijawab. Top deh pokoknya, terimakasih haka premium.</p>
                                 </div>
                                 <!-- founder -->
                                 <div class="testimonial-founder d-flex align-items-center justify-content-center">
                                     <div class="founder-img">
-                                        <img src="assets/img/gallery/Homepage_testi.png" alt="">
+                                        <img src="https://via.placeholder.com/80" class="rounded-circle" alt="">
                                     </div>
                                     <div class="founder-text">
-                                        <span>Jessya Inn</span>
-                                        <p>Chif Photographer</p>
+                                        <span>Mia</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-testimonial text-center">
+                            <!-- Testimonial Content -->
+                            <div class="testimonial-caption ">
+                                <div class="testimonial-top-cap">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         width="67px" height="49px">
+                                        <path fill-rule="evenodd"  fill="rgb(240, 78, 60)"
+                                              d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"/>
+                                    </svg>
+                                    <p>Sebagai seorang trader pemula, memilih saham yang tepat merupakan pilihan yang tergolong sulit, namun setelah bergabung dengan HAKA premium, hal ini bukan menjadi kendala lagi, karena di HAKA premium rekomendasi dan juga timing yang di berikan tepat sasaran dan di dukung dengan analisa yang kuat, sehingga kita dapat membantu untuk memilih saham yang tepat, terima kasih HAKA premium.</p>
+                                </div>
+                                <!-- founder -->
+                                <div class="testimonial-founder d-flex align-items-center justify-content-center">
+                                    <div class="founder-img">
+                                        <img src="https://via.placeholder.com/80" class="rounded-circle" alt="">
+                                    </div>
+                                    <div class="founder-text">
+                                        <span>Elifas Felix</span>
                                     </div>
                                 </div>
                             </div>
@@ -326,41 +353,4 @@
         </div>
     </div>
     <!-- Testimonial End -->
-
-    <!-- Coun Down Start -->
-    <div class="count-down-area pb-120">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <!-- Counter Up -->
-                    <div class="single-counter text-center">
-                        <span class="counter">8705</span>
-                        <p>Projects Completed</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <!-- Counter Up -->
-                    <div class="single-counter active text-center">
-                        <span class="counter">480</span>
-                        <p> Active Clients</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <!-- Counter Up -->
-                    <div class="single-counter text-center">
-                        <span class="counter">626</span>
-                        <p>Cups of Coffee</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <!-- Counter Up -->
-                    <div class="single-counter text-center">
-                        <span class="counter">9774</span>
-                        <p>Happy Clients</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Coun Down End -->
 @endsection

@@ -169,7 +169,7 @@ class ImportExcelController extends Controller
 
     public function frontendIndexBreakout()
     {
-        return view('excel-frontend.breakout');
+        return view('frontend.ranking_volume');
     }
 
     public function frontendPostBreakout(Request $request)
@@ -201,7 +201,7 @@ class ImportExcelController extends Controller
 
     public function frontendIndexBoom()
     {
-        return view('excel-frontend.boom');
+        return view('frontend.breakout');
     }
 
     public function frontendPostBoom(Request $request)
@@ -209,12 +209,18 @@ class ImportExcelController extends Controller
         $rankingVolume = Boom::select('booms.*');
 
         return Datatables::of($rankingVolume)
+            ->editColumn('datetime', function($row){
+                return \Carbon\Carbon::parse($row->datetime)->format('d M Y');
+            })
+            ->editColumn('volume', function($row){
+                return number_format($row->volume, 1, ",", ".");
+            })
             ->make(true);
     }
 
     public function frontendIndexForeignAccumulation()
     {
-        return view('excel-frontend.foreign-accumulation');
+        return view('frontend.foreign_accum');
     }
 
     public function frontendPostForeignAccumulation(Request $request)
@@ -222,6 +228,12 @@ class ImportExcelController extends Controller
         $rankingVolume = ForeignAccumulation::select('foreign_accumulations.*');
 
         return Datatables::of($rankingVolume)
+            ->editColumn('datetime', function($row){
+                return \Carbon\Carbon::parse($row->datetime)->format('d M Y');
+            })
+            ->editColumn('volume', function($row){
+                return number_format($row->volume, 1, ",", ".");
+            })
             ->make(true);
     }
 }
